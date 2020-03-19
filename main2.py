@@ -28,9 +28,9 @@ if override == 'y':
                 lines[i] = 'HitCircleOverlap: 128\n'
             with open ("skin.ini", "w") as s:
                 s.writelines(lines)
-        
 else:
     pass
+
 if twox == 'y':
 
     for default in defaults2x:
@@ -69,9 +69,10 @@ if twox == 'y':
 else:
     for default in defaults:
         default = Image.open(default, 'r')
+        default = default.resize((128, 128), Image.ANTIALIAS)
         default_w, default_h = default.size
 
-        resizer = Image.new('RGBA', (128, 128), (255, 255, 255, 0))
+        resizer = Image.new('RGBA', (178, 178), (255, 255, 255, 0))
         re_w, re_h = resizer.size
 
         offset = ((re_w - default_w) // 2, (re_h - default_h) // 2)
@@ -80,7 +81,9 @@ else:
         dimw, dimh = resizer.size
 
         hs = Image.open('hitcircle.png', 'r')
+        hs = hs.resize((178, 178), Image.ANTIALIAS)
         hso = Image.open('hitcircleoverlay.png', 'r')
+        hso = hso.resize((178, 178), Image.ANTIALIAS)
 
         hsoffset = ((dimw - re_w) // 2, (re_h - dimw) // 2)
         resizer.paste(hs, hsoffset, hs)
