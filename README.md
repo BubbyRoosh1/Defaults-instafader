@@ -1,5 +1,11 @@
 # Defaults-instafader
 
+<h2>Requirements</h2>
+
+* Python
+* Pillow module (```pip install pillow``` or ```python3 -m pip install Pillow``` in a terminal)
+
+
 <h2>Usage</h2>
 
 1. Download this repository
