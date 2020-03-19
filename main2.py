@@ -13,8 +13,17 @@ count = 0
 os.mkdir('old_circles')
 blank = Image.new('RGBA', (1, 1, ), (0, 0, 0, 0))
 
-twox = input("Would you like to create @2x files? y/n (Requires @2x defaults and @2x hitcircle/hitcircleoverlay)")
+twox = input("Are there @2x elements? y/n: ")
+override = input("Would you like HitCircleOverlap to be fixed so circles don't glitch? y/n: ")
 
+if override == 'y':
+    with open("skin.ini", "r") as s:
+        lines = s.readlines()
+    for i, line in enumerate(lines):
+        if 'HitCircleOverlap' in line:
+            for l in searchlines[i:i+3]: print l, print
+else:
+    pass
 if twox == 'y':
 
     for default in defaults2x:
