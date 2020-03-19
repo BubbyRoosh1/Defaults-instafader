@@ -37,7 +37,7 @@ if twox == 'y':
         default = Image.open(default, 'r')
         default_w, default_h = default.size
 
-        resizer = Image.new('RGBA', (256, 256), (255, 255, 255, 0))
+        resizer = Image.new('RGBA', (310, 310), (255, 255, 255, 0))
         re_w, re_h = resizer.size
 
         offset = ((re_w - default_w) // 2, (re_h - default_h) // 2)
@@ -46,9 +46,9 @@ if twox == 'y':
         dimw, dimh = resizer.size
 
         hs = Image.open('hitcircle@2x.png', 'r')
-        hs = hs.resize((178, 178), Image.ANTIALIAS)
+        hs = hs.resize((310, 310), Image.ANTIALIAS)
         hso = Image.open('hitcircleoverlay@2x.png', 'r')
-        hso = hso.resize((178, 178), Image.ANTIALIAS)
+        hso = hso.resize((310, 310), Image.ANTIALIAS)
 
         hsoffset = ((dimw - re_w) // 2, (re_h - dimw) // 2)
         resizer.paste(hs, hsoffset, hs)
