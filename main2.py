@@ -1,4 +1,6 @@
 from PIL import Image
+import os
+import shutil
 
 defaults = ['default-0.png', 'default-1.png', 'default-2.png', 'default-3.png',
         'default-4.png', 'default-5.png', 'default-6.png', 'default-7.png',
@@ -8,9 +10,12 @@ defaults2x = ['default-0@2x.png', 'default-1@2x.png', 'default-2@2x.png', 'defau
 
 count = 0
 
+os.mkdir('old_circles')
+
 twox = input("Would you like to create @2x files? y/n (Requires @2x defaults and @2x hitcircle/hitcircleoverlay)")
 
 if twox == 'y':
+
     for default in defaults2x:
         default = Image.open(default, 'r')
         default_w, default_h = default.size
@@ -34,10 +39,14 @@ if twox == 'y':
 
         resizer.paste(hso, hsooffset, hso)
 
-        fname = ('def' + str(count) + '@2x.png')
+        shutil.move('default-' + str(count) + '@2x.png', './old_circles')
+        fname = ('default-' + str(count) + '@2x.png')
         count += 1
         resizer.save(fname)
         print('Saved as', fname)
+
+    shutil.move('hitcircle@2x.png', './old_circles')
+    shutil.move('hitcircleoverlay@2x.png', './old_circles')
 else:
     for default in defaults:
         default = Image.open(default, 'r')
@@ -62,7 +71,11 @@ else:
 
         resizer.paste(hso, hsooffset, hso)
 
-        fname = ('def' + str(count) + '.png')
+        shutil.move('default-' + str(count) + '.png', './old_circles')
+        fname = ('default-' + str(count) + '.png')
         count += 1
         resizer.save(fname)
         print('Saved as', fname)
+
+    shutil.move('hitcircle.png', './old_circles')
+    shutil.move('hitcircleoverlay.png', './old_circles')
