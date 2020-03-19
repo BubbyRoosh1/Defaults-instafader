@@ -10,5 +10,6 @@
 
 1. Download this repository
 2. Place the files into your skin foler
-3. Run the python file (make sure to have python installed on your system)
-4. That's it! Reload your skin/open osu! and your circles will now be instafade. The original files will be in a foler titled "old_circles"
+3. Run the python file 
+4. Answer the two questions: @2x files are needed for the @2x option and the HitCircleOverlap value in the skin.ini will be rewritten if you wish
+5. That's it! Reload your skin/open osu! and your circles will now be instafade. The original files will be in a foler titled "old_circles"
