@@ -17,11 +17,18 @@ twox = input("Are there @2x elements? y/n: ")
 override = input("Would you like HitCircleOverlap to be fixed so circles don't glitch? y/n: ")
 
 if override == 'y':
+    shutil.copy('skin.ini', 'old_circles')
     with open("skin.ini", "r") as s:
         lines = s.readlines()
     for i, line in enumerate(lines):
         if 'HitCircleOverlap' in line:
-            for l in searchlines[i:i+3]: print l, print
+            if twox == 'y':
+                lines[i] = 'HitCircleOverlap: 256\n'
+            else:
+                lines[i] = 'HitCircleOverlap: 128\n'
+            with open ("skin.ini", "w") as s:
+                s.writelines(lines)
+        
 else:
     pass
 if twox == 'y':
