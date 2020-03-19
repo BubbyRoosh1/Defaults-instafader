@@ -45,8 +45,10 @@ if twox == 'y':
         resizer.paste(default, offset)
         dimw, dimh = resizer.size
 
-        hs = Image.open('hitcircle@2x.png', 'r')
+        hs = Image.open('hitcircle@2x.png', 'r'
+        hs = hs.resize((178, 178), Image.ANTIALIAS)
         hso = Image.open('hitcircleoverlay@2x.png', 'r')
+        hso = hso.resize((178, 178), Image.ANTIALIAS)
 
         hsoffset = ((dimw - re_w) // 2, (re_h - dimw) // 2)
         resizer.paste(hs, hsoffset, hs)
