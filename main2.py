@@ -69,7 +69,7 @@ if twox == 'y':
 else:
     for default in defaults:
         default = Image.open(default, 'r')
-        default = default.resize((140, 140), Image.ANTIALIAS)
+        #default = default.resize((140, 140), Image.ANTIALIAS)
         default_w, default_h = default.size
 
         resizer = Image.new('RGBA', (160, 160), (255, 255, 255, 0))
