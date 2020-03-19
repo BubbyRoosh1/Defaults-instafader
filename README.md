@@ -1,5 +1,8 @@
 # Defaults-instafader
 
+## Disclaimer
+This program doesn't automatically add colour to your new hitcircles, but I plan on adding that feature within the next few weeks
+
 ## Requirements
 
 * Python
