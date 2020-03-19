@@ -11,6 +11,7 @@ defaults2x = ['default-0@2x.png', 'default-1@2x.png', 'default-2@2x.png', 'defau
 count = 0
 
 os.mkdir('old_circles')
+blank = Image.new('RGBA', (1, 1, ), (0, 0, 0, 0))
 
 twox = input("Would you like to create @2x files? y/n (Requires @2x defaults and @2x hitcircle/hitcircleoverlay)")
 
@@ -47,6 +48,8 @@ if twox == 'y':
 
     shutil.move('hitcircle@2x.png', './old_circles')
     shutil.move('hitcircleoverlay@2x.png', './old_circles')
+    blank.save('hitcircle@2x.png')
+    blank.save('hitcircleoverlay@2x.png')
 else:
     for default in defaults:
         default = Image.open(default, 'r')
@@ -79,3 +82,5 @@ else:
 
     shutil.move('hitcircle.png', './old_circles')
     shutil.move('hitcircleoverlay.png', './old_circles')
+    blank.save('hitcircle.png')
+    blank.save('hitcircleoverlay.png')
