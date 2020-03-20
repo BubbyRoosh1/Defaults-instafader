@@ -23,9 +23,9 @@ if override == 'y':
     for i, line in enumerate(lines):
         if 'HitCircleOverlap' in line:
             if twox == 'y':
-                lines[i] = 'HitCircleOverlap: 256\n'
+                lines[i] = 'HitCircleOverlap: 300\n'
             else:
-                lines[i] = 'HitCircleOverlap: 128\n'
+                lines[i] = 'HitCircleOverlap: 160\n'
             with open ("skin.ini", "w") as s:
                 s.writelines(lines)
 else:
