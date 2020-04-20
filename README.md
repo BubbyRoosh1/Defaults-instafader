@@ -33,4 +33,4 @@ Coloured hitcircles will seem a little dull. This is so transparency works and t
 3. Run the file.
    * Open a terminal
    * Navigate to the folder directory (in windows 10 you can type "cmd" in the bar at the top that displays your directory)
-   * Type ```python3 main2.py``` in the terminal
+   * Type ```python3 mainc.py``` in the terminal
