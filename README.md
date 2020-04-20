@@ -1,7 +1,8 @@
 # Defaults-instafader
+## Now with colour!
 
 ## Disclaimer
-This program doesn't automatically add colour to your new hitcircles, but I plan on adding that feature within the next few weeks
+Coloured hitcircles will seem a little dull. This is so transparency works and they're not just coloured squares.. I think..
 
 ## Requirements
 
@@ -16,7 +17,7 @@ This program doesn't automatically add colour to your new hitcircles, but I plan
 1. Download this repository
 2. Place the files into your skin foler
 3. Run the python file 
-4. Answer the two questions: @2x files are needed for the @2x option and the HitCircleOverlap value in the skin.ini will be rewritten if you wish
+4. Answer the two questions: @2x files are needed for the @2x option and two hex values are required for the hitcircles to be coloured (they can be the same colour btw)
 5. That's it! Reload your skin/open osu! and your circles will now be instafade. The original files will be in a folder titled "old_circles"
 
 ### Detailed version
@@ -31,5 +32,5 @@ This program doesn't automatically add colour to your new hitcircles, but I plan
 2. Place ALL of the files from the .zip file into the skin folder you want to alter
 3. Run the file.
    * Open a terminal
-   * Navigate to the folder directory (usually you can copy the directory from the top of the file explorer and remove \Users\yourname then type "cd .\TheThingYouJustCopied"
-   * Type ```python3 main2.py``` in ther terminal while in that directory
+   * Navigate to the folder directory (in windows 10 you can type "cmd" in the bar at the top that displays your directory)
+   * Type ```python3 main2.py``` in the terminal
