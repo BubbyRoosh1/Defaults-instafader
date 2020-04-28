@@ -97,6 +97,12 @@ if twox == "y":
         count += 1
         colourized.save(fname)
         print('Saved as', fname)
+        
+        
+        shutil.move('hitcircle@2x.png', './old_circles')
+        shutil.move('hitcircleoverlay@2x.png', './old_circles')
+        blank.save('hitcircle@2x.png')
+        blank.save('hitcircleoverlay@2x.png')
 
 if twox == "n":
 
@@ -151,7 +157,7 @@ if twox == "n":
         colourized.save(fname)
         print('Saved as', fname)
 
-shutil.move('hitcircle.png', './old_circles')
-shutil.move('hitcircleoverlay.png', './old_circles')
-blank.save('hitcircle.png')
-blank.save('hitcircleoverlay.png')
+        shutil.move('hitcircle.png', './old_circles')
+        shutil.move('hitcircleoverlay.png', './old_circles')
+        blank.save('hitcircle.png')
+        blank.save('hitcircleoverlay.png')
