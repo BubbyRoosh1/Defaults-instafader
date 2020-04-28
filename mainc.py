@@ -3,11 +3,10 @@ from PIL import Image, ImageOps
 import os
 import shutil
 
-# Sets the names for the hitcircle numbers
 defaults = ['default-0.png', 'default-1.png', 'default-2.png', 'default-3.png',
         'default-4.png', 'default-5.png', 'default-6.png', 'default-7.png',
         'default-8.png', 'default-9.png']
-# @2x version of the hitcircle numbers
+
 defaults2x = ['default-0@2x.png', 'default-1@2x.png', 'default-2@2x.png', 'default-3@2x.png', 'default-4@2x.png', 'default-5@2x.png', 'default-6@2x.png', 'default-7@2x.png', 'default-8@2x.png', 'default-9@2x.png']
 
 count = 0
@@ -16,7 +15,7 @@ os.mkdir('old_circles')
 
 blank = Image.new('RGBA', (1, 1), (0, 0, 0, 0))
 
-twox = input("Are you using @2x files? (requires ALL @2x files to be present) y/n")
+twox = input("Are you using @2x files? (requires ALL @2x files to be present) y/n: ")
 
 try:
     shutil.copy('skin.ini', 'old_circles')
@@ -54,10 +53,10 @@ if twox == "y":
 
         dimw, dimh = resizer.size
 
-        hs = Image.open('hitcircle.png', 'r')#.convert("L")
+        hs = Image.open('hitcircle@2x.png', 'r')#.convert("L")
         hs = hs.resize((300, 300), Image.ANTIALIAS)
 
-        hsnc = Image.open('hitcircle.png', 'r')#.convert("L")
+        hsnc = Image.open('hitcircle@2x.png', 'r')#.convert("L")
         hsnc = hs.resize((300, 300), Image.ANTIALIAS)
 
         alpha = hs.getchannel('A')
@@ -69,7 +68,7 @@ if twox == "y":
             hs = ImageOps.colorize(greyscale, (0,0,0,0), hcc2)
         hs.putalpha(alpha)
 
-        hso = Image.open('hitcircleoverlay.png', 'r')
+        hso = Image.open('hitcircleoverlay@2x.png', 'r')
         hso = hso.resize((300, 300), Image.ANTIALIAS)
 
         hsoffset = ((dimw - re_w) // 2, (re_h - dimw) // 2)
@@ -107,10 +106,10 @@ if twox == "n":
 
         dimw, dimh = resizer.size
 
-        hs = Image.open('hitcircle.png', 'r')#.convert("L")
+        hs = Image.open('hitcircle.png', 'r')
         hs = hs.resize((160, 160), Image.ANTIALIAS)
 
-        hsnc = Image.open('hitcircle.png', 'r')#.convert("L")
+        hsnc = Image.open('hitcircle.png', 'r')
         hsnc = hs.resize((160, 160), Image.ANTIALIAS)
 
         alpha = hs.getchannel('A')
