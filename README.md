@@ -2,7 +2,7 @@
 ## Now with colour!
 
 ## Disclaimer
-Coloured hitcircles will seem a little dull. This is so transparency works and they're not just coloured squares.. I think..
+Colored hitcircles will seem a little dull. This is so transparency works and they're not just coloured squares.. I think..
 
 ## Requirements
 
